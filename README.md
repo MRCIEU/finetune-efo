@@ -47,3 +47,11 @@ def check_cuda():
 
 check_cuda()
 ```
+
+## Notes
+
+- Output the confidence of the mapping
+- Set temperature parameter to low during mapping
+- Validate output - needs to be a true EFO
+- Try just providing a query that includes a csv of existing trait - EFO mappings
+

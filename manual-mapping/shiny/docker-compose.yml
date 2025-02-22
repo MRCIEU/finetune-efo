@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  shiny-app:
+    platform: linux/amd64
+    restart: always
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "3838:3838"
+    environment:
+      - USER=shiny
+      - PASSWORD=shiny
+      - MAX_UPLOAD_SIZE=100

@@ -90,6 +90,17 @@ res.confidence.value_counts()
 res.to_csv("trait-efo.csv")
 
 
+# remove duplicate trait_id values from sim and keep only trait_id, trait columns
+sim2 = sim.drop_duplicates(subset=['trait_id'])[['trait_id', 'trait']]
+
+# Merge with res by trait column
+res2 = res.merge(sim2, on='trait', how='left')
+res2.keys()
+res2.to_csv("trait-efo.csv")
+
+
+
+
 # tokens per request:
 # 500 input
 # 30 output
